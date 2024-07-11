@@ -3,14 +3,14 @@ name: Upload to S3
 on:
   push:
     branches:
-      - main  # Change this to your main branch or specific branches as needed
+      - main
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout code
         uses: actions/checkout@v2
 
       - name: Set up AWS CLI
@@ -18,10 +18,21 @@ jobs:
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: ap-south-1  # Replace with your AWS region mumbai
+          aws-region: ap-south-1
+
+      - name: Debug AWS CLI Version
+        run: aws --version
+
+      - name: List local files
+        run: ls -la
+
+      - name: Check S3 bucket permissions
+        run: aws s3 ls s3://githubactionscicd
 
       - name: Sync files to S3
         run: |
-          ls -la
-          aws s3 sync ./ s3://githubactionscicd  --delete --exact-timestamps
+          aws s3 sync ./ s3://githubactionscicd --delete --exact-timestamps
           echo "Sync operation completed"
+
+      - name: List S3 bucket contents after sync
+        run: aws s3 ls s3://githubactionscicd --recursive
