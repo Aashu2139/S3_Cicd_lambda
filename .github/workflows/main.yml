@@ -27,12 +27,12 @@ jobs:
         run: ls -la
 
       - name: Check S3 bucket permissions
-        run: aws s3 ls s3://publicaccess001
+        run: aws s3 ls s3://githubactionscicd
 
       - name: Sync files to S3
         run: |
-          aws s3 sync ./ s3://publicaccess001 --delete --exact-timestamps
+          aws s3 sync ./ s3://githubactionscicd --delete --exact-timestamps
           echo "Sync operation completed"
 
       - name: List S3 bucket contents after sync
-        run: aws s3 ls s3://publicaccess001 --recursive
+        run: aws s3 ls s3://githubactionscicd --recursive
