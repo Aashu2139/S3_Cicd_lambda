@@ -1,25 +1,36 @@
-name: Upload to S3
+# This workflow will be triggered for every change inside the src directory, on every push to the main branch.
+# This workflow will also be auto triggered upon execution of Terraform CI/CD workflow.
+# This pipeline will deploy all changes to files to s3 bucket.
+
+name: 'S3 Deployment'
 
 on:
   push:
     branches:
-      - main  # Change this to your main branch
+      - main
+    paths:
+      - 'src/**'
+      - '.github/workflows/s3_Cicd_lambda'
+
+
 
 jobs:
   deploy:
+    name: 'Deploy to S3'
     runs-on: ubuntu-latest
+    environment: dev
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+    - name: Checkout
+      uses: actions/checkout@v2
 
-      - name: Set up AWS CLI
-        uses: aws-actions/configure-aws-credentials@v2
-        with:
-          aws-access-key-id: ${{ secrets.AKIAW3MEA7PIDSHOD3L4 }}
-          aws-secret-access-key: ${{ secrets.z73JvTugIpX1h/tV1Hu/4QWV3f/TaET0GywbMPZ/ }}
-          aws-region: ap-south-1  # Replace with your AWS region
+    - name: Configure AWS Credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ secrets.AKIAW3MEA7PIDSHOD3L4 }}
+        aws-secret-access-key: ${{ secrets.z73JvTugIpX1h/tV1Hu/4QWV3f/TaET0GywbMPZ/ }}
+        aws-region: ap-south-1
 
-      - name: Sync files to S3
-        run: |
-          aws s3 sync https://github.com/Aashu2139/S3_Cicd_lambda.git s3://githubactionscicd --delete --exact-timestamps
+    - name: Deploy to S3
+      run: |
+        aws s3 sync src/ s3://${{ secrets.githubactionscicd }} 
