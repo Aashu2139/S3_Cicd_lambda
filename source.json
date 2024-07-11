@@ -1,6 +1,6 @@
 {
   "id": {"S": "1"},
-  "name": {"S": "ASHKING"},
+  "name": {"S": "Hello Buddy"},
   "location": {"S": "Bengaluru, India"},
   "contact": {
     "M": {
