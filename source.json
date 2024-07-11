@@ -1,7 +1,7 @@
 {
   "id": {"S": "1"},
   "name": {"S": "Ashutosh Wankhede"},
-  "location": {"S": "Bengaluru, India"},
+  "location": {"S": "BLR, India"},
   "contact": {
     "M": {
       "email": {"S": "aashutoshw@gmail.com"},
