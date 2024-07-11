@@ -22,4 +22,6 @@ jobs:
 
       - name: Sync files to S3
         run: |
+          ls -la
           aws s3 sync ./ s3://githubactionscicd  --delete --exact-timestamps
+          echo "Sync operation completed"
