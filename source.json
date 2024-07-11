@@ -10,7 +10,7 @@
       "GitHub": {"S": "https://github.com/Aashu2139"}
     }
   },
-  "profile": {"S": ""},
+  "profile": {"S": "Working fine on desktop not on mobile browsers"},
   "work_experience": {
     "L": [
       {
