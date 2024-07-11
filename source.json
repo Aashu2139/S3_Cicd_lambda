@@ -1,0 +1,62 @@
+{
+  "id": {"S": "1"},
+  "name": {"S": "Ashutosh Wankhede"},
+  "location": {"S": "Bengaluru, India"},
+  "contact": {
+    "M": {
+      "email": {"S": "aashutoshw@gmail.com"},
+      "phone": {"S": "+1 (91) 8408809885"},
+      "linkedin": {"S": "https://www.linkedin.com/in/ashutoshwankhede2139/"},
+      "GitHub": {"S": "https://github.com/Aashu2139"}
+    }
+  },
+  "profile": {"S": ""},
+  "work_experience": {
+    "L": [
+      {
+        "M": {
+          "title": {"S": "Cloud Engineer"},
+          "company": {"S": "Axcess Techsystems (Axcess.io)"},
+          "location": {"S": "Bengaluru, India"},
+          "duration": {"S": "Aug 2023 - Present"},
+          "responsibilities": {
+            "L": [
+              {"S": "JusPay external service provider"},
+              {"S": "Successfully orchestrated the migration of dockerized microservices..."},
+              {"S": "Monitoring and debugging"}
+            ]
+          }
+        }
+      },
+      {
+        "M": {
+          "title": {"S": "DevOps Intern"},
+          "company": {"S": "Cravita Technologies India Pvt Ltd"},
+          "location": {"S": "Pune, India"},
+          "duration": {"S": "May 2019 - July 2022"},
+          "responsibilities": {
+            "L": [
+              {"S": "Managed AWS cloud infrastructure..."},
+              {"S": "Utilized Terraform for infrastructure provisioning..."}
+            ]
+          }
+        }
+      }
+    ]
+  },
+  "education": {
+    "M": {
+      "degree": {"S": "Bachelor of Technology (B. Tech.)"},
+      "institution": {"S": "Acharya Nagarjuna University, AP (India)"},
+      "year": {"S": "April 2013 - February 2017"}
+    }
+  },
+  "skills": {
+    "M": [
+      {"S": "DevOps"},
+      {"S": "Docker"},
+      {"S": "Docker Compose"},
+      {"S": "Kubernetes"}
+    ]
+  }
+}
