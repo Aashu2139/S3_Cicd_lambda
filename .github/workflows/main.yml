@@ -22,4 +22,4 @@ jobs:
 
       - name: Sync files to S3
         run: |
-          aws s3 sync ./path/to/your/files s3://githubactionscicd --delete --exact-timestamps
+          aws s3 sync Aashu2139/S3_Cicd_lambda s3://githubactionscicd --delete --exact-timestamps
