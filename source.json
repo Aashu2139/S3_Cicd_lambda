@@ -1,5 +1,5 @@
 {
-  {"id": "A001"},
+  "id": {"N": "001"},
   "name": {"S": "MANAV MAKHIJA 01 "},
   "location": {"S": "BENGLURU, India"},
   "contact": {
