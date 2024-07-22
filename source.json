@@ -1,7 +1,7 @@
 {
-  "id": {"S": "A001"},
-  "name": {"S": "MANAV MAKHIJA 01"},
-  "location": {"S": "BENGLURU, India"},
+  "id": {"S": "A002"},
+  "name": {"S": "andrew tokyo"},
+  "location": {"S": "Japan"},
   "contact": {
     "M": {
       "email": {"S": "aashutoshw@gmail.com"},
