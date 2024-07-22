@@ -147,42 +147,46 @@
         }
 
         function displayResume(data) {
-            document.getElementById('name').textContent = data.name.S;
-            document.getElementById('location').textContent = data.location.S;
+            document.getElementById('name').textContent = data.name;
+            document.getElementById('location').textContent = data.location;
 
-            const contact = data.contact.M;
+            const contact = data.contact;
             document.getElementById('contact').innerHTML = `
-                Email: <a href="mailto:${contact.email.S}">${contact.email.S}</a> |
-                Phone: <a href="tel:${contact.phone.S}">${contact.phone.S}</a> |
-                LinkedIn: <a href="${contact.linkedin.S}" target="_blank">LinkedIn</a> |
-                GitHub: <a href="${contact.GitHub.S}" target="_blank">GitHub</a>
+                Email: <a href="mailto:${contact.email}">${contact.email}</a> |
+                Phone: <a href="tel:${contact.phone}">${contact.phone}</a> |
+                LinkedIn: <a href="${contact.linkedin}" target="_blank">LinkedIn</a> |
+                GitHub: <a href="${contact.GitHub}" target="_blank">GitHub</a>
             `;
 
-            // Profiles
-            document.getElementById('label').textContent = data.profile.S;
+            // Profile
+            document.getElementById('label').textContent = data.profile;
 
             // Work Experience
-            const workHtml = data.work_experience.L.map(w => `
+            const workHtml = data.work_experience.map(w => `
                 <div class="work-item">
-                    <h3>${w.M.title.S} at ${w.M.company.S}</h3>
-                    <p class="work-date">${w.M.duration.S}</p>
+                    <h3>${w.title} at ${w.company}</h3>
+                    <p class="work-date">${w.duration}</p>
                     <ul class="work-summary">
-                        ${w.M.responsibilities.L.map(r => `<li>${r.S}</li>`).join('')}
+                        ${w.responsibilities.map(r => `<li>${r}</li>`).join('')}
                     </ul>
                 </div>
             `).join('');
             document.getElementById('work').innerHTML = workHtml;
 
             // Education
-            const education = data.education.M;
+            const education = data.education;
             const educationHtml = `
                 <div class="education-item">
-                    <h3>${education.degree.S}</h3>
-                    <p>${education.institution.S}</p>
-                    <p class="education-date">${education.year.S}</p>
+                    <h3>${education.degree}</h3>
+                    <p>${education.institution}</p>
+                    <p class="education-date">${education.year}</p>
                 </div>
             `;
             document.getElementById('education').innerHTML = educationHtml;
+
+            // Skills
+            const skillsHtml = data.skills.map(skill => `<span class="skill-tag">${skill}</span>`).join(' ');
+            document.getElementById('skills').innerHTML = skillsHtml;
         }
 
         fetchResume();
