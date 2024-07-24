@@ -1,22 +1,22 @@
 {
-    "id": "A002",
-    "name": "mathew  02",
+    "id": "A003",
+    "name": "andrew  03",
     "location": "LOS-ANGELES,USA",
     "contact": {
-      "email": "aashutoshw@gmail.com",
-      "phone": "+1 (91) 8408809885",
-      "linkedin": "https://www.linkedin.com/in/ashutoshwankhede2139/",
-      "GitHub": "https://github.com/Aashu2139"
+      "email": "mathew02@gmail.com",
+      "phone": "+1 (912) 840885",
+      "linkedin": "https://www.linkedin.com/in/mathew02/",
+      "GitHub": "https://github.com/"
     },
     "profile": "Working fine on desktop not on mobile browsers",
     "work_experience": [
       {
         "title": "Cloud Engineer",
-        "company": "Axcess Techsystems AKA (Axcess.io)",
-        "location": "Bengaluru, India",
+        "company": "mbt techsystems",
+        "location": "USA",
         "duration": "Aug 2023 - Present",
         "responsibilities": [
-          "JusPay external service provider",
+          "external service provider",
           "Successfully orchestrated the migration of dockerized microservices...",
           "Monitoring and debugging"
         ]
